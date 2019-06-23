@@ -30,7 +30,7 @@ To install you need to have gulp installed globally!
 Uses [gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin)
 
 ## Creates Responsive Images
-[Uses](https://github.com/mahnunchik/gulp-responsive)
+Uses [gulp-responsive](https://github.com/mahnunchik/gulp-responsive)
 
 ### For Example, transforms:
 ```
