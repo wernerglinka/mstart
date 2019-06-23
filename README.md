@@ -57,14 +57,14 @@ Site images are organized in folder `originalImages`. The folder structure must 
 ### So we can use
 ```html
 <img class="image-responsive w500"
-     srcset="/assets/images/folder1/cover-small.png 500w,
-             /assets/images/folder1/cover-medium.png 800w,
-             /assets/images/folder1/cover-large.png 1200w"
-     src="/assets/images/folder1/cover-large.png" alt="An electro motor">
+     srcset="/assets/images/backgrounds/banner-main.png 500w,
+             /assets/images/backgrounds/banner-main-medium.png 800w,
+             /assets/images/backgrounds/banner-main-large.png 1200w"
+     src="/assets/images/backgrounds/banner-main-large.png" alt="">
 ```
 
 ## Loads SVG Icons into the Site Asset Folder
-I am using [Feather Icons](https://www.npmjs.com/package/feather-icons). The icons are installed during `npm install` and then moved into the site asset folder buring the builkd process.
+I am using [Feather Icons](https://www.npmjs.com/package/feather-icons). The icons are installed during `npm install` and then moved into the site asset folder buring the build process.
 
 ## Compiles Styles from SCSS to CSS
 Builds the main css style sheet, combines it with `normalize.css`, adds vendor prefixes and minimizes the final style sheet.
