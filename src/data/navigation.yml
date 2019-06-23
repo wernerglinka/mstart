@@ -1,0 +1,38 @@
+- title: Home
+  isLink: true
+  url: /
+  linkClass: home-link
+  
+- title: Page 2
+  isLink: false
+  url: /page2/
+  linkClass: page-2-link dropdown
+  submenu:
+    - title: Justo Bibendum
+      url: /page1
+      linkClass: justo-bibendum-link
+    - title: Bibendum Ornare
+      url: /page2
+      linkClass: bibendum-ornare-link
+
+- title: Page 3
+  isLink: true
+  url: /page3/
+  linkClass: page-3-link
+
+- title: Page 4
+  isLink: false
+  url: /page4
+  linkClass: page-4-link dropdown
+  submenu:
+    - title: Mattis Sem
+      url: /page-4/mattis-sem
+      link-class: mattis-sem-link
+    - title: Adipiscing Fringilla
+      url: /page-4/adipiscing-fringilla
+      link-class: adipiscing-fringilla-link
+
+- title: Contact
+  isLink: true
+  url: /contact/
+  linkClass: contact-link

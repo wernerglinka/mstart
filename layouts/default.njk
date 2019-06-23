@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="us_en">
+    <head>
+        {% include "partials/head.njk" %}
+    </head>
+    <body class="{{ body_classes }}">
+        {% include "partials/browser-upgrade.njk" %}
+        
+        {% block header %}
+        {% include "partials/header.njk" %}
+        {% endblock %}
+
+        <main data-router-wrapper>
+            <section data-router-view="{{ routerPageName }}">
+
+            {% block banner %}
+            {% endblock %}
+
+            {% block body %}
+            {{ contents | safe }}
+            {% endblock %}
+
+            </section>
+        </main>
+
+        {% block footer %}
+        {% include "partials/footer.njk" %}
+        {% endblock %}
+
+        {% block to_top %}
+        <div id="toTop"><i class="icon icon-chevron-up"></i></div>
+        {% endblock %}
+        
+        {% block body_scripts %}
+        {% include "partials/scripts.njk" %}
+        {% endblock %} 
+    </body>
+</html>
