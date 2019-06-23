@@ -1,9 +1,81 @@
-# Metalsmith Starter
+# mStart - a Metalsmith Starter
 
-Simple [Metalsmith](https://metalsmith.io/) starter site. Uses [Nunjucks](https://mozilla.github.io/nunjucks/) templating and a [Gulp](https://gulpjs.com/) build process.
+I am modernizing my Metalsmith starter with Gulp 4 and Parcel so I can finally use modern Javascript.
 
-## Must read for responsive images
-https://cloudfour.com/thinks/responsive-images-101-definitions/
+This starter is a work in  progress. Eventually, it will include a blog setup as well. Suggestions for functionality are welcome.
 
-## Notes on page frontmatter
-Indentation of variables will break the page build, e.g. the template might NOT be applied
+## Build Process
+- Optimize images
+- Create responsive images
+- Loads svg icons into the site asset folder
+- Compiles all styles from scss to css
+- Transpiles all javascripts from ES6 to ES5
+- Uses Metalsmith to assemble the site
+
+## Installation
+To install you need to have gulp installed globally!
+
+```batch
+  $ https://github.com/wernerglinka/mstart.git
+  $ npm install
+```
+
+## Build for Developing
+`npm run develop`
+
+## Build for Production
+`npm run buildProd`
+
+## Optimize Images
+Uses [gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin)
+
+## Creates Responsive Images
+[Uses](https://github.com/mahnunchik/gulp-responsive)
+
+### For Example, transforms:
+```
+-originalImages
+  -backgrounds
+    banner-main.jpg
+```
+
+### To:
+```
+-src
+  -sources
+    -assets
+      -images
+        -backgrounds
+          banner-main.jpg
+          banner-main-large.jpg
+          banner-main-medium.jpg
+          banner-main-small.jpg
+```
+
+### So we can use
+```html
+<img class="image-responsive w500"
+     srcset="/assets/images/folder1/cover-small.png 500w,
+             /assets/images/folder1/cover-medium.png 800w,
+             /assets/images/folder1/cover-large.png 1200w"
+     src="/assets/images/folder1/cover-large.png" alt="An electro motor">
+```
+
+## Loads SVG Icons into the Site Asset Folder
+I am using [Feather Icons](https://www.npmjs.com/package/feather-icons). The icons are installed during `npm install` and then moved into the site asset folder buring the builkd process.
+
+## Compiles Styles from SCSS to CSS
+Builds the main css style sheet, combines it with `normalize.css`, adds vendor prefixes and minimizes the final style sheet.
+For development it adds source maps.
+
+## Transpiles Javascript from ES6 to ES5
+Uses `gulp-parcel` to bundle modular javascript. 
+
+## Uses Metalsmith to Assemble the Site
+Metalsmith uses [Nunjucks](https://mozilla.github.io/nunjucks/) templating and the latest versions of [Metalsmith-in-place](https://github.com/metalsmith/metalsmith-in-place) and [Metalsmith-layouts](https://github.com/metalsmith/metalsmith-layouts). See https://github.com/metalsmith/metalsmith-in-place/wiki for more examples on how to use these two essential plugins.
+
+Uses [Metalsmith-data-loader](https://github.com/tests-always-included/metalsmith-data-loader) to to add additional metadata from external files.
+
+
+
+

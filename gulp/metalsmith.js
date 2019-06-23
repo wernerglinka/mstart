@@ -5,7 +5,6 @@ const layouts = require('metalsmith-layouts');
 const inplace = require('metalsmith-in-place');
 const permalinks = require('metalsmith-permalinks');
 const writeMetadata = require('metalsmith-writemetadata');
-const monitor = require('../local_modules/metalsmith-monitor');
 const CaptureTag = require('nunjucks-capture');
 
 // functions to extend Nunjucks environment
@@ -16,6 +15,7 @@ const condenseTitle = string => string.toLowerCase().replace(/\s+/g, '');
 // get working directory
 // workingDir is a child of "__dirname"
 const path = require('path');
+const monitor = require('../local_modules/metalsmith-monitor');
 const workingDir = path.join(__dirname, '../');
 
 // Define engine options for the inplace and layouts plugins
@@ -25,12 +25,12 @@ const templateConfig = {
     filters: {
       toUpper,
       spaceToDash,
-      condenseTitle
+      condenseTitle,
     },
     extensions: {
-      CaptureTag: new CaptureTag()
-    }
-  }
+      CaptureTag: new CaptureTag(),
+    },
+  },
 };
 
 /**
@@ -48,23 +48,25 @@ module.exports = function metalsmith(callback) {
     // Files are in either .yml or .json format
     // MetaData are inserted in each file like this: "data: !siteData.yml"
     // Reference: https://www.npmjs.com/package/metalsmith-data-loader
-    .use(loadData({
-      directory: "src/data/"
-    }))
-
-    
+    .use(
+      loadData({
+        directory: 'src/data/',
+      })
+    )
 
     .use(inplace(templateConfig))
-    
+
     .use(permalinks())
 
     // layouts MUST come after permalinks so the template has access to the "path" variable
     .use(layouts(templateConfig))
 
-    .use(assets({
-      source: './src/sources/assets/',
-      destination: './assets/'
-    }))
+    .use(
+      assets({
+        source: './src/sources/assets/',
+        destination: './assets/',
+      })
+    )
 
     // Show all metadata for each page in console
     // Used for Debug only
@@ -72,18 +74,18 @@ module.exports = function metalsmith(callback) {
 
     // Generate a metadata json file for each page
     // Used for Debug only
-    .use(writeMetadata({
-      pattern: ["**/*.html"],
-      ignorekeys: ["next", "contents", "previous"],
-      bufferencoding: "utf8"
-    }))
+    .use(
+      writeMetadata({
+        pattern: ['**/*.html'],
+        ignorekeys: ['next', 'contents', 'previous'],
+        bufferencoding: 'utf8',
+      })
+    )
 
     .build(err => {
-        if (err) {
-            throw err;
-        }
-        callback();
+      if (err) {
+        throw err;
+      }
+      callback();
     });
-  }
-
-    
+};
