@@ -32,6 +32,8 @@ Uses [gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin)
 ## Creates Responsive Images
 Uses [gulp-responsive](https://github.com/mahnunchik/gulp-responsive)
 
+Site images are organized in folder `originalImages`. The folder structure must be as it will be used in the `images` folder that will be used on the site. The plugin creates all responsive files and stores them in the same folder structure in `src/sources/assets/images`. Metalsmith will move this folder to `site/assets`.
+
 ### For Example, transforms:
 ```
 -originalImages
