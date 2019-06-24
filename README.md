@@ -4,7 +4,7 @@ I am modernizing my Metalsmith starter with Gulp 4 and Parcel so I can finally u
 
 This starter is a work in  progress. Eventually, it will include a blog setup as well. Suggestions for functionality are welcome.
 
-Currently, this starter uses a navigation that is defined in `src/data/navigation.yml`. The site uses [HighwayJS](https://github.com/Dogstudio/highway) to animate page transitions.
+Currently, this starter uses a navigation that is defined in `src/data/navigation.yml`. The site uses [HighwayJS](https://github.com/Dogstudio/highway) to animate page transitions and [Quicklink](https://github.com/GoogleChromeLabs/quicklink) to prefetch pagelinks.
 
 
 ## Build Process
