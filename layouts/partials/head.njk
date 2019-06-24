@@ -9,7 +9,7 @@
 {% if data.site.owner.google.verify %}<meta name="google-site-verification" content="{{ data.site.owner.google.verify }}">{% endif %}
 {% if data.site.owner.bing.verify %}<meta name="msvalidate.01" content="{{ data.site.owner.bing.verify }}">{% endif %}
 <link rel="canonical" href="{% if canonicalURL %}{{ canonicalURL }}{% else %}{{ data.site.url }}/{% if path %}{{ path }}/{% endif %}{% endif %}">
-<link rel="shortcut icon" href="/favicon.ico">
+<link rel="shortcut icon" href="/assets/defaultImages/favicon.ico">
 {% if includeSocialMetaData %}{% include "partials/social-metadata.njk" %}{% endif %}
 <link rel="stylesheet" type="text/css" href="/assets/styles.css">
 

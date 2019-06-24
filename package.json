@@ -50,6 +50,7 @@
     "metalsmith-writemetadata": "^0.4.5",
     "normalize.css": "^8.0.1",
     "nunjucks-capture": "^1.0.4",
+    "quicklink": "^1.0.0",
     "streamqueue": "^1.1.2"
   },
   "devDependencies": {

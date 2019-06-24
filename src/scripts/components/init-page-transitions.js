@@ -1,4 +1,5 @@
 import Highway from '@dogstudio/highway';
+import Quicklink from 'quicklink/dist/quicklink.mjs';
 import Fade from './fade';
 
 function initPageTransitions() {
@@ -8,6 +9,13 @@ function initPageTransitions() {
     transitions: {
       default: Fade,
     },
+  });
+
+  // load quickview upon Highway event when view is loaded
+  H.on('NAVIGATE_END', ({ to }) => {
+    Quicklink({
+      el: to.view,
+    });
   });
 }
 
