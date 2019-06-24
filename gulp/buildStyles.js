@@ -24,7 +24,7 @@ const streamqueue = require('streamqueue');
  */
 
 module.exports = function buildStyles() {
-  console.log('building styles');
+  console.log('Building styles **************************************');
 
   // for "gulp", "util.env.production" will be undefined,"!!util.env.production" will coerce to boolean true
   // for "gulp --production", "util.env.production" will be true

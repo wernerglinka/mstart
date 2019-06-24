@@ -3,6 +3,11 @@ import Highway from '@dogstudio/highway';
 import Quicklink from 'quicklink/dist/quicklink.mjs';
 import Fade from './fade';
 
+const prefetchLinks = document.querySelector('.main-menu');
+Quicklink({
+  el: prefetchLinks,
+});
+
 function initPageTransitions() {
   // Call Highway.Core once.
   // Store it in a variable to use events
@@ -14,10 +19,8 @@ function initPageTransitions() {
 
   // load quickview upon Highway event when view is loaded
   H.on('NAVIGATE_END', ({ to }) => {
-    console.log('NAVIGATE_END');
-    const prefetchLinks = document.querySelector('.main-menu');
     Quicklink({
-      el: prefetchLinks,
+      el: to.view,
     });
   });
 }

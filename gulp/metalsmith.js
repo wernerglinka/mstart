@@ -5,7 +5,12 @@ const layouts = require('metalsmith-layouts');
 const inplace = require('metalsmith-in-place');
 const permalinks = require('metalsmith-permalinks');
 const writeMetadata = require('metalsmith-writemetadata');
+// const checkLinks = require('metalsmith-broken-link-checker');
+const linkcheck = require('metalsmith-linkcheck');
+const msif = require('metalsmith-if');
 const CaptureTag = require('nunjucks-capture');
+
+const util = require('gulp-util');
 
 // functions to extend Nunjucks environment
 const toUpper = string => string.toUpperCase();
@@ -37,7 +42,7 @@ const templateConfig = {
  *  Function to implement the Metalsmith build process
  */
 module.exports = function metalsmith(callback) {
-  console.log('building site with metalsmith');
+  console.log('Building site with metalsmith ************************');
 
   Metalsmith(workingDir)
     .source('./src/content')
@@ -70,17 +75,24 @@ module.exports = function metalsmith(callback) {
 
     // Show all metadata for each page in console
     // Used for Debug only
-    .use(monitor())
+    // .use(monitor())
 
     // Generate a metadata json file for each page
     // Used for Debug only
+    // .use(
+    //  writeMetadata({
+    //    pattern: ['**/*.html'],
+    //    ignorekeys: ['next', 'contents', 'previous'],
+    //    bufferencoding: 'utf8',
+    //  })
+    // )
+
     .use(
-      writeMetadata({
-        pattern: ['**/*.html'],
-        ignorekeys: ['next', 'contents', 'previous'],
-        bufferencoding: 'utf8',
+      msif(!!util.env.linkcheck, () => {
+        console.log('Checking internal links ******************************');
       })
     )
+    .use(msif(!!util.env.linkcheck, linkcheck()))
 
     .build(err => {
       if (err) {

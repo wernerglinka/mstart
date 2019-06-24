@@ -1,0 +1,9 @@
+.content {
+  padding: $content-padding;
+
+  // compensate for header height so banner starts at very top of page
+  &.has-banner {
+    padding-top: 0;
+    margin-top: -$header-height;
+  }
+}

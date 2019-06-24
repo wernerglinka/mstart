@@ -1,6 +1,25 @@
-$nav-bar-height: 80px;
+// header
+$header-height: 80px;
 
+// body
+$body-padding: $header-height 0 0;
+$body-padding-with-banner: 0;
+
+// global styles
+$max-content-width: 1280px;
+$default-side-padding: 15px;
+
+// main nav
+$nav-bar-height: $header-height;
+// main nav typography
 $main-nav-color: #333;
 $main-nav-font-size: 1rem;
+// main nav dropdowns
+$dropdown-background-color: rgba(17, 17, 17, 0.9);
+$dropdown-text-color: #ccc;
 
-$dropdown-background-color: rgba(17, 17, 17, 0.3);
+// content section
+$content-padding: 50px 0;
+
+// footer
+$footer-background-color: rgba(17, 17, 17, 0.3);

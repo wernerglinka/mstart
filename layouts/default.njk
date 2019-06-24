@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="us_en">
+<html lang="en">
     <head>
         {% include "partials/head.njk" %}
     </head>
@@ -17,7 +17,9 @@
             {% endblock %}
 
             {% block body %}
+            <div class="content {{ content_classes }}">
             {{ contents | safe }}
+            </div>
             {% endblock %}
 
             </section>

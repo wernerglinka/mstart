@@ -5,29 +5,29 @@ html {
   box-sizing: inherit;
 }
 
-:focus {
-  //outline: none;
-}
-
 body {
-  background-color: yellow;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 16px;
+  line-height: 1.4;
+  padding: $body-padding;
 }
-
 h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
 }
-
 ul, ol, li {
   margin: 0;
   padding: 0;
 }
-
 img {
   width: 100%;
   height: auto;
+}
+.container {
+  width: 100%;
+  max-width: $max-content-width;
+  margin: 0 auto;
+  padding: 0 $default-side-padding;
 }
 
 .w500 {
@@ -37,12 +37,4 @@ img {
 }
 
 
-// transitions
-.transition-fade {
-  transition: 0.4s;
-  opacity: 1;
-}
 
-html.is-animating .transition-fade {
-  opacity: 0;
-}

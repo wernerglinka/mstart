@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 
 module.exports = function optimizeImages() {
-  console.log('Optimizing images');
+  console.log('Optimizing images ***********************************');
   return gulp
     .src('./src/sources/assets/images/*.*')
     .pipe(

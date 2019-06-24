@@ -15,6 +15,8 @@ const createResponsiveImages = require('./gulp/createResponsiveImages');
 // for "gulp --production", "util.env.production" will be true
 // source: https://j11y.io/javascript/truthy-falsey/
 const isProduction = !!util.env.production;
+// utility variable used to check all links
+const isLinkCheck = !!util.env.linkcheck;
 
 // Function to reload the browser
 function reload(done) {
@@ -25,7 +27,7 @@ function reload(done) {
 // Function to watch all relevant source files and update browser accordingly
 // this function is only used during site development
 function watchSite(done) {
-  if (!isProduction) {
+  if (!isProduction || !isLinkCheck) {
     browserSync.init({
       server: {
         baseDir: './site/',

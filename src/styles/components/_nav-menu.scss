@@ -28,8 +28,18 @@
         }
       }
 
+      span:after {
+        content: "+";
+        padding-left: 10px;
+      }
+
       &.open > span {
+        color: $dropdown-text-color;
         background-color: $dropdown-background-color;
+
+        &:after {
+          content: "-";
+        }
       }
     }
   }
@@ -49,6 +59,7 @@
       > a, > span {
         line-height: 2em;
         white-space: nowrap;
+        color: $dropdown-text-color;
       }
     } 
   }

@@ -11,6 +11,7 @@ const cached = require('gulp-cached');
  * https://github.com/mahnunchik/gulp-responsive/issues/113
  */
 module.exports = function images() {
+  console.log('Creating source sets for images *********************');
   return gulp
     .src('./src/originalImages/**/*.*')
     .pipe(cached('processed-images'))

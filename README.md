@@ -81,6 +81,8 @@ Metalsmith uses [Nunjucks](https://mozilla.github.io/nunjucks/) templating and t
 
 Uses [Metalsmith-data-loader](https://github.com/tests-always-included/metalsmith-data-loader) to to add additional metadata from external files.
 
+Uses [Metalsmith Linkcheck](https://github.com/gchallen/code.metalsmith-linkcheck) to check all internal and external links. Run `npm run linkcheck`.
+
 
 
 
