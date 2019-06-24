@@ -26,10 +26,10 @@
   linkClass: page-4-link dropdown
   submenu:
     - title: Mattis Sem
-      url: /page-4/mattis-sem/
+      url: /page2/
       link-class: mattis-sem-link
     - title: Adipiscing Fringilla
-      url: /page-4/adipiscing-fringilla/
+      url: /page3/
       link-class: adipiscing-fringilla-link
 
 - title: Contact

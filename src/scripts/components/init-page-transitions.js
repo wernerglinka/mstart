@@ -14,9 +14,10 @@ function initPageTransitions() {
 
   // load quickview upon Highway event when view is loaded
   H.on('NAVIGATE_END', ({ to }) => {
-    console.log('NAVIGATE_END event');
+    console.log('NAVIGATE_END');
+    const prefetchLinks = document.querySelector('.main-menu');
     Quicklink({
-      el: to.view,
+      el: prefetchLinks,
     });
   });
 }
