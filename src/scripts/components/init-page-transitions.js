@@ -23,6 +23,12 @@ function initPageTransitions() {
       el: to.view,
     });
   });
+
+  // This event is sent everytime a `data-router-view` is added to the DOM Tree
+  H.on('NAVIGATE_IN', ({ to, location }) => {
+    const event = new Event('updateActiveTrail');
+    document.dispatchEvent(event);
+  });
 }
 
 export default initPageTransitions;

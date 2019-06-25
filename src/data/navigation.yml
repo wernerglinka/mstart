@@ -3,34 +3,32 @@
   url: /
   linkClass: home-link
   
-- title: Page 2
+- title: More Pages
   isLink: false
-  url: /page2/
   linkClass: page-2-link dropdown
   submenu:
-    - title: Justo Bibendum
+    - title: Go toPage 1
       url: /page1/
-      linkClass: justo-bibendum-link
-    - title: Bibendum Ornare
+      linkClass: page1-link
+    - title: Go to Page 2
       url: /page2/
-      linkClass: bibendum-ornare-link
+      linkClass: page2-link
 
 - title: Page 3
   isLink: true
   url: /page3/
   linkClass: page-3-link
 
-- title: Page 4
+- title: Even More Pages
   isLink: false
-  url: /page4/
   linkClass: page-4-link dropdown
   submenu:
-    - title: Mattis Sem
+    - title: Go to Page 2
       url: /page2/
-      link-class: mattis-sem-link
-    - title: Adipiscing Fringilla
+      linkClass: page2-link
+    - title: Go to Page 3
       url: /page3/
-      link-class: adipiscing-fringilla-link
+      linkClass: page3-link
 
 - title: Contact
   isLink: true
