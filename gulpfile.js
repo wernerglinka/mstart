@@ -27,7 +27,7 @@ function reload(done) {
 // Function to watch all relevant source files and update browser accordingly
 // this function is only used during site development
 function watchSite(done) {
-  if (!isProduction || !isLinkCheck) {
+  if (!isProduction && !isLinkCheck) {
     browserSync.init({
       server: {
         baseDir: './site/',
