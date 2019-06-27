@@ -10,7 +10,7 @@
 }
 .column-content {
   padding: 40px;
-  background-color: $page-module-bg-default;
+  background-color: #fff;
   box-shadow: $page-module-box-shadow;
 
   h1 {
@@ -33,16 +33,6 @@
 
 .bottom-space {
   margin-bottom: 20px;
-}
-.dark-bg {
-  background-color: #091124;
-
-  h1, p {
-    color: #fff;
-  }
-}
-.medium-bg {
-  background-color: #9a9cb2;
 }
 
 // applied to a container wthat contains an image
