@@ -24,6 +24,16 @@ function initPageTransitions() {
     });
   });
 
+  // This event is sent everytime the `out()` method of a transition is run to hide a `data-router-view`
+  H.on('NAVIGATE_OUT', ({ from, trigger, location }) => {
+    // the section that we are transition out from has a data-router-view
+    // attribute with the page name. This page name is also used as a body class
+    const fromPage = from.view.dataset.routerView;
+
+    // Remove the pagename body class
+    document.body.classList.remove(fromPage);
+  });
+
   // This event is sent everytime a `data-router-view` is added to the DOM Tree
   H.on('NAVIGATE_IN', ({ to, location }) => {
     const event = new Event('updateActiveTrail');

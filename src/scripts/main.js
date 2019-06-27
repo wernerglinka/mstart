@@ -2,9 +2,13 @@
 import raf from './utilities/request-animation-frame';
 import initPageTransitions from './components/init-page-transitions';
 import mainNav from './components/main-nav';
+import setActiveTrail from './components/set-active-trail';
+import toTop from './components/to-top';
 
 (function() {
-  raf(); // fallback fro browsers with no raf
+  raf(); // fallback for browsers with no raf
   initPageTransitions();
+  setActiveTrail();
+  toTop();
   mainNav();
 })();

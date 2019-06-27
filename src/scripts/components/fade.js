@@ -1,7 +1,7 @@
 import Highway from '@dogstudio/highway';
 
 /**
- *  Function to fade a page out and a new page in
+ *  Function to fade out a page and a new page in
  *  using CSS animation. See 'styles/components/page-transition.scss'
  */
 class Fade extends Highway.Transition {
@@ -12,6 +12,8 @@ class Fade extends Highway.Transition {
     // fade in
     to.style.opacity = 0;
 
+    // Immediately executing function that recurselvy calls itself
+    // when done calls done()
     (function fadeIn() {
       let val = parseFloat(to.style.opacity);
       val += 0.05;
@@ -26,6 +28,8 @@ class Fade extends Highway.Transition {
   out({ from, done }) {
     from.style.opacity = 1;
 
+    // Immediately executing function that recurselvy calls itself
+    // when done calls done()
     (function fadeOut() {
       let val = parseFloat(from.style.opacity);
       val -= 0.05;

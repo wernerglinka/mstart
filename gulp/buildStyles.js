@@ -29,7 +29,7 @@ module.exports = function buildStyles() {
   // for "gulp", "util.env.production" will be undefined,"!!util.env.production" will coerce to boolean true
   // for "gulp --production", "util.env.production" will be true
   // source: https://j11y.io/javascript/truthy-falsey/
-  const withSourceMap = !!util.env.production;
+  const withSourceMap = !util.env.production;
 
   // we use normalize that was installed via npm
   const normalize = gulp.src(require.resolve('normalize.css'));

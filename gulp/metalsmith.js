@@ -26,7 +26,7 @@ const workingDir = path.join(__dirname, '../');
 // Define engine options for the inplace and layouts plugins
 const templateConfig = {
   engineOptions: {
-    path: `${workingDir}/layouts`,
+    path: [`${workingDir}/layouts`, `${workingDir}/src/sources/assets/icons`],
     filters: {
       toUpper,
       spaceToDash,

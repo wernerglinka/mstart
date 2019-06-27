@@ -1,6 +1,7 @@
 import $ from 'jquery';
 
-// eslint-disable-next-line
+import setActiveTrail from './set-active-trail';
+
 function mainNav() {
   const navLinks = $('.main-menu')
     .find('li')
@@ -25,17 +26,7 @@ function mainNav() {
 
   // update active trail after page load
   document.addEventListener('updateActiveTrail', function() {
-    const links = document.querySelectorAll('.main-menu a');
-
-    for (let i = 0; i < links.length; i++) {
-      const link = links[i];
-      // reset any previous active state
-      link.classList.remove('is-active');
-      // set the active link
-      if (link.href === document.location.href) {
-        link.classList.add('is-active');
-      }
-    }
+    setActiveTrail();
   });
 }
 
