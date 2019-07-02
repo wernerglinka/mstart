@@ -4,7 +4,7 @@
   // this allow to control of the background imahe opacity
   &::after {
     content: "";
-    background: url('https://res.cloudinary.com/glinkaco/image/upload/v1562005803/Backgrounds/main-background_llp3lt.png');
+    background-image: url('https://res.cloudinary.com/glinkaco/image/upload/v1562005803/Backgrounds/main-background_llp3lt.png');
     background-position: top $header-height center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -15,5 +15,34 @@
     right: 0;
     position: absolute;
     z-index: -1;   
+
+    // responsive background image - breakpoint determined with https://www.responsivebreakpoints.com/
+    @media (max-width: 1380px) {
+      background-image: url('https://res.cloudinary.com/glinkaco/image/upload/f_auto,q_70,w_1380/v1562005803/Backgrounds/main-background_llp3lt.png');
+    }
+    @media (max-width: 1100px) {
+      background-image: url('https://res.cloudinary.com/glinkaco/image/upload/f_auto,q_70,w_1100/v1562005803/Backgrounds/main-background_llp3lt.png');
+    }
+    @media (max-width: 1025px) {
+      background-image: url('https://res.cloudinary.com/glinkaco/image/upload/f_auto,q_70,w_1025/v1562005803/Backgrounds/main-background_llp3lt.png');
+    }
+    @media (max-width: 947px) {
+      background-image: url('https://res.cloudinary.com/glinkaco/image/upload/f_auto,q_70,w_947/v1562005803/Backgrounds/main-background_llp3lt.png');
+    }
+    @media (max-width: 862px) {
+      background-image: url('https://res.cloudinary.com/glinkaco/image/upload/f_auto,q_70,w_862/v1562005803/Backgrounds/main-background_llp3lt.png');
+    }
+    @media (max-width: 773px) {
+      background-image: url('https://res.cloudinary.com/glinkaco/image/upload/f_auto,q_70,w_773/v1562005803/Backgrounds/main-background_llp3lt.png');
+    }
+    @media (max-width: 677px) {
+      background-image: url('https://res.cloudinary.com/glinkaco/image/upload/f_auto,q_70,w_677/v1562005803/Backgrounds/main-background_llp3lt.png');
+    }
+    @media (max-width: 570px) {
+      background-image: url('https://res.cloudinary.com/glinkaco/image/upload/f_auto,q_70,w_570/v1562005803/Backgrounds/main-background_llp3lt.png');
+    }
+    @media (max-width: 449px) {
+      background-image: url('https://res.cloudinary.com/glinkaco/image/upload/f_auto,q_70,w_449/v1562005803/Backgrounds/main-background_llp3lt.png');
+    }
   }
 }
