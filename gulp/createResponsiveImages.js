@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const responsive = require('gulp-responsive');
 const cached = require('gulp-cached');
+const webp = require('gulp-webp');
 
 /**
  * Function auto generate small/medium/large version of images
@@ -15,6 +16,7 @@ module.exports = function images() {
   return gulp
     .src('./src/originalImages/**/*.*')
     .pipe(cached('processed-images'))
+    .pipe(webp())
     .pipe(
       responsive(
         {
@@ -72,6 +74,34 @@ module.exports = function images() {
             {
               // Compress, strip metadata, and rename original image
               rename: { extname: '.png' },
+            },
+          ],
+          // Resize all PNG images to three different sizes: 500, 800, and 1200 pixels
+          '**/*.webp': [
+            {
+              width: 500,
+              rename: {
+                suffix: '-small',
+                extname: '.webp',
+              },
+            },
+            {
+              width: 800,
+              rename: {
+                suffix: '-medium',
+                extname: '.webp',
+              },
+            },
+            {
+              width: 1200,
+              rename: {
+                suffix: '-large',
+                extname: '.webp',
+              },
+            },
+            {
+              // Compress, strip metadata, and rename original image
+              rename: { extname: '.webp' },
             },
           ],
         },

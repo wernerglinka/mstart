@@ -4,7 +4,7 @@
   // this allow to control of the background imahe opacity
   &::after {
     content: "";
-    background: url('/assets/images/backgrounds/main-background.png');
+    background: url('https://res.cloudinary.com/glinkaco/image/upload/v1562005803/Backgrounds/main-background_llp3lt.png');
     background-position: top $header-height center;
     background-repeat: no-repeat;
     background-attachment: fixed;

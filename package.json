@@ -39,6 +39,7 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8",
+    "gulp-webp": "^4.0.1",
     "intersection-observer": "^0.7.0",
     "jquery": "^3.4.1",
     "jquery.easing": "^1.4.1",

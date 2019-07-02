@@ -6,6 +6,8 @@ This starter is a work in  progress. Eventually, it will include a blog setup as
 
 Currently, this starter uses a navigation that is defined in `src/data/navigation.yml`. The site uses [HighwayJS](https://github.com/Dogstudio/highway) to animate page transitions and [Quicklink](https://github.com/GoogleChromeLabs/quicklink) to prefetch pagelinks.
 
+Uses `<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>` to speed up Google Fonts download
+
 
 ## Build Process
 - Optimize images
@@ -84,5 +86,5 @@ Uses [Metalsmith-data-loader](https://github.com/tests-always-included/metalsmit
 Uses [Metalsmith Linkcheck](https://github.com/gchallen/code.metalsmith-linkcheck) to check all internal and external links. Run `npm run linkcheck`.
 
 
-
+https://res.cloudinary.com/glinkaco/image/upload/c_scale,w_auto,dpr_auto/v1562005787/folder1/test1_gfou1m.jpg
 

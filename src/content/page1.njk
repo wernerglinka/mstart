@@ -19,11 +19,17 @@ includeSocialMetaData: true
   <h1>Page 1</h1>
   <p>Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec id elit non mi porta gravida at eget metus. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
 
-  <img class="image-responsive w500"
-      srcset="/assets/images/folder1/cover-small.png 500w,
-              /assets/images/folder1/cover-medium.png 800w,
-              /assets/images/folder1/cover-large.png 1200w"
-      src="/assets/images/folder1/cover-large.png" alt="An electro motor">
+  <img
+    sizes="(max-width: 1200px) 100vw, 1200px"
+    srcset="
+      https://res.cloudinary.com/glinkaco/image/upload/f_auto,q_70,w_300/v1562005782/folder1/cover_dki25f.png 300w,
+      https://res.cloudinary.com/glinkaco/image/upload/f_auto,q_70,w_335/v1562005782/folder1/cover_dki25f.png 335w,
+      https://res.cloudinary.com/glinkaco/image/upload/f_auto,q_70,w_365/v1562005782/folder1/cover_dki25f.png 365w,
+      https://res.cloudinary.com/glinkaco/image/upload/f_auto,q_70,w_470/v1562005782/folder1/cover_dki25f.png 470w,
+      https://res.cloudinary.com/glinkaco/image/upload/f_auto,q_70,w_510/v1562005782/folder1/cover_dki25f.png 510w,
+      https://res.cloudinary.com/glinkaco/image/upload/f_auto,w_1200/v1562005782/folder1/cover_dki25f.png 1200w
 
+    src="https://res.cloudinary.com/glinkaco/image/upload/f_auto,w_1200/v1562005782/folder1/cover_dki25f.png"
+    alt="">
   <p>Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
 </section>

@@ -11,5 +11,7 @@
 <link rel="canonical" href="{% if canonicalURL %}{{ canonicalURL }}{% else %}{{ data.site.url }}/{% if path %}{{ path }}/{% endif %}{% endif %}">
 <link rel="shortcut icon" href="/assets/defaultImages/favicon.ico">
 {% if includeSocialMetaData %}{% include "partials/social-metadata.njk" %}{% endif %}
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link rel="preconnect" href="https://res.cloudinary.com/" crossorigin>
 <link rel="stylesheet" type="text/css" href="/assets/styles.css">
 
