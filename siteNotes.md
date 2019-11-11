@@ -3,7 +3,7 @@
 Uses:
 - the latest versions of plugins as of June 2019
 - Nunjucks templating
-- image optimization
+- image optimization... ne cloudinary images... much better
 - svg icons
 - responsive images
 

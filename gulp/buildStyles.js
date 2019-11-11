@@ -8,6 +8,7 @@ const gulpif = require('gulp-if');
 const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const streamqueue = require('streamqueue');
+// const merge = require('gulp-merge');
 
 /**
  *  Function to build the site styles
@@ -29,9 +30,9 @@ module.exports = function buildStyles() {
   // for "gulp", "util.env.production" will be undefined,"!!util.env.production" will coerce to boolean true
   // for "gulp --production", "util.env.production" will be true
   // source: https://j11y.io/javascript/truthy-falsey/
-  const withSourceMap = !util.env.production;
+  const withSourceMap = util.env.develop;
 
-  // we use normalize that was installed via npm
+  // use normalize that was installed via npm
   const normalize = gulp.src(require.resolve('normalize.css'));
 
   // external fonts that are being imported with @import
@@ -41,15 +42,28 @@ module.exports = function buildStyles() {
     .src(`./src/styles/main.scss`)
     .pipe(gulpif(withSourceMap, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulpif(withSourceMap, sourcemaps.write()));
+    .pipe(gulpif(withSourceMap, sourcemaps.write()))
+    // .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(concat('styles.css'))
+    // apply prefixes and compress with cssnano
+    .pipe(gulp.dest(`./src/sources/assets`));
 
-  // fontImports MUST come first so @import rules are the very first in css
+  return scss;
+
+  /*
+
+  TODO:
+    compile css from scss and then combine all css files in a different task
+    find out if config allows sourcemap in cssnano
+
+    
+    // fontImports MUST come first so @import rules are the very first in css
   // otherwise font will NOT be imported on localhost
   return (
     streamqueue({ objectMode: true }, fontImports, normalize, scss)
       .pipe(concat('styles.css'))
       // apply prefixes and compress with cssnano
-      .pipe(postcss([autoprefixer(), cssnano()]))
       .pipe(gulp.dest(`./src/sources/assets`))
   );
+*/
 };
