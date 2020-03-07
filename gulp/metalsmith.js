@@ -10,6 +10,8 @@ const linkcheck = require('metalsmith-linkcheck');
 const msif = require('metalsmith-if');
 const CaptureTag = require('nunjucks-capture');
 
+const date = require('metalsmith-build-date');
+
 const util = require('gulp-util');
 
 // functions to extend Nunjucks environment
@@ -59,6 +61,8 @@ module.exports = function metalsmith(callback) {
       })
     )
 
+    .use(date())
+
     .use(inplace(templateConfig))
 
     .use(permalinks())
@@ -79,13 +83,13 @@ module.exports = function metalsmith(callback) {
 
     // Generate a metadata json file for each page
     // Used for Debug only
-    // .use(
-    //  writeMetadata({
-    //    pattern: ['**/*.html'],
-    //    ignorekeys: ['next', 'contents', 'previous'],
-    //    bufferencoding: 'utf8',
-    //  })
-    // )
+    .use(
+      writeMetadata({
+        pattern: ['**/*.html'],
+        ignorekeys: ['next', 'contents', 'previous'],
+        bufferencoding: 'utf8',
+      })
+    )
 
     .use(
       msif(!!util.env.linkcheck, () => {
