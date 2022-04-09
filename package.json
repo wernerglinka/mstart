@@ -57,7 +57,7 @@
     "metalsmith-linkcheck": "^0.3.4",
     "metalsmith-permalinks": "^2.2.0",
     "metalsmith-writemetadata": "^0.4.5",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "normalize.css": "^8.0.1",
     "nunjucks-capture": "^1.0.4",
     "quicklink": "^1.0.0",
